@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #mydiv {
+        background-color: red;
+        padding:  16px;
+        margin:  16px auto;
+        color: black;
+        width: 50%;
+       }
+       input[type='text']{
+        width: 70%;
+        padding: 8px;
+        margin: 8px;
+        font-size: 24px;
+       }
+       .validation_text {
+        color: rgb(29, 124, 168);
+       }
+       
+    </style>
+</head>
+<body>
+<div id="mydiv">
+    <input type="text" name="fname" id="fname" placeholder="First Name">
+    <div id="fname_text" class="validation_text"></div>
+
+    <input type="text" name="lname" id="lname" placeholder="Last Name">
+    <div id="lname_text" class="validation_text"></div>
+
+</div>
+</body>
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    $('#fname').focusin(function () {
+        $('#fname_text').text("Enter First Name");
+    });
+    $('#fname').focusout(function () {
+        if (parseInt($(this).val()) < 10) {
+       $('#fname_text').text("Invadid Inputs");
+    } else {
+            $('#fname_text').text("");
+        }
+    });
+
+    $('#lname').focusin(function () {
+        $('#lname_text').text("Enter Last Name");
+    });
+    $('#lname').focusout(function () {
+        if (parseInt($(this).val()) < 10) {
+       $('#lname_text').text("Invadid Inputs");
+    } else {
+            $('#lname_text').text("");
+        }
+    });
+
+</script>
+</html>
+
